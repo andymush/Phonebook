@@ -5,8 +5,11 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import Welcome from './components/Welcome.vue';
+import Index from './components/Contacts/Index.vue';
+
+app.component('welcome', Welcome);
+app.component('Index', Index);
 
 
 
