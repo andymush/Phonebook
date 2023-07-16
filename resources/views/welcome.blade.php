@@ -36,7 +36,6 @@
                 </div>
             @endif
 
-            <example-component></example-component>
             
         </div>
     </body>
