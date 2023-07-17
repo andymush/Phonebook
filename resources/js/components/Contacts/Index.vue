@@ -25,7 +25,7 @@
                             <td>
                                 <button class="btn btn-success">Update</button>
                                 &nbsp;
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger" @click="deleteContact(contact.id)">Delete</button>
                             </td>
                         </tr>                        
                     </tbody>
@@ -34,6 +34,7 @@
         </div>
 </template>
 <script>
+            const token = localStorage.getItem("token");
 
     export default {
     data() {
@@ -43,7 +44,6 @@
     },
     methods: {
         getContacts() {
-            const token = localStorage.getItem("token");
             axios.get("http://127.0.0.1:8000/api/Contacts", {
                 headers: {
                     "Content-Type": "application/json",
@@ -56,7 +56,25 @@
                 .catch((error) => {
                 console.log(error);
             });
+        },
+        deleteContact(contactId) {
+            if (confirm('Delete Contact?')) {
+                console.log(contactId);
+                const url = `http://127.0.0.1:8000/api/Contacts/${contactId}`;
+                axios
+                .delete(url, {
+                    headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + token
+                    }
+                })
+                .then((response) => {
+                    console.log(response.data);
+                    this.getContacts();
+                });
+            }
         }
+
     },
     mounted() {
         this.getContacts();
