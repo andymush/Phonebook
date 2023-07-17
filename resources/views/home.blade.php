@@ -6,10 +6,9 @@
         <div class="col-md-12">            
             <div class="card">
                 <div class="card-header"></div>
-                <div class="card-body">                    
-                    <Welcome></Welcome>
-
-                    <Index></Index>
+                <div class="card-body" id="app">  
+                    <Welcome></Welcome>                    
+                    <router-view></router-view>
                 </div>
             </div>
         </div>
