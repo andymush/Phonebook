@@ -1,4 +1,5 @@
 <template>
+    
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md-6 offset-md-3">
@@ -34,6 +35,9 @@
 </template>
 
 <script>
+import { routerKey } from 'vue-router';
+
+
      export default {
        name: 'Login',
        data () {
@@ -56,7 +60,9 @@
                 .then((response) => {         
                     console.log('successful login')
                     localStorage.setItem('token', response.data.token);    
-                    this.$router.push({ path: '/' })                
+                    this.$router.push({name:'Index'})
+                    //this.$router.replace({name:'Index'})
+                    console.log('almost done')
                 })
                 .catch((error) => {
                     console.log(error)

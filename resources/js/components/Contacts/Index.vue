@@ -25,7 +25,7 @@
                             <td>
                                 <button class="btn btn-success">Update</button>
                                 &nbsp;
-                                <button class="btn btn-danger">Update</button>
+                                <button class="btn btn-danger">Delete</button>
                             </td>
                         </tr>                        
                     </tbody>

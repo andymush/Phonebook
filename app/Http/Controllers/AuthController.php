@@ -19,7 +19,7 @@ class AuthController extends Controller
             return $this->error('','credentials dont match');
         }
         $user = User::where('email', $request->email)->first();
-       
+        
         
 
         $token = $request->user()->createToken('auth_token')->plainTextToken;
@@ -57,4 +57,20 @@ class AuthController extends Controller
         ]);
     
     }
+
+    public function logout(Request $request)
+    {
+        try{
+            $user = User::findOrFail($request->get('user_id'));
+
+            $user->tokens()->delete();
+
+            return reponse()->json(['User logged out', 200]);
+        
+        }catch (Exception $e) {
+            return response()->json($e, 500);            
+        }
+
+    }
+
 }

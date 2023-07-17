@@ -46,6 +46,7 @@ app.component('Welcome', Welcome);
 app.component('Index', Index);
 app.component('Login', Login);
 app.component('create',Create);
+app.component('App', App);
 
 
 app.use(router);

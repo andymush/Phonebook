@@ -17,13 +17,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('{any}', function () {
+    return view('home');
+})->where('any', '.*');
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
     //Route::view('/', 'home');
-    Route::get('{any}', function () {
-        return view('home');
-    })->where('any', '.*');
+    
     
 });
