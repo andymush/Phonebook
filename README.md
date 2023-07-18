@@ -37,7 +37,7 @@ cd into the directory where you want to clone the project
     php artisan serve
 
 11. Compile the front-end files
-    npm run dev
+    npm install && npm run dev
 
 12. The Admin panel can be accessed by adding '/admin' to the URL e.g  http://localhost:8000/admin
     'email' => 'admin@gmail.com',     
