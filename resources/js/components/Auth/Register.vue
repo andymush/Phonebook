@@ -7,7 +7,11 @@
                     <div class="card-body">
                         <h1 class="text-center">Register</h1>
                         <hr/>
-                        <form @submit.prevent="register" class="row" >                            
+                        <form @submit.prevent="register" class="row" >  
+                            <div class="form-group col-12">
+                                <label for="name" class="font-weight-bold">Name</label>
+                                <input type="text"  name="name" id="name" v-model="user.name" class="form-control">
+                            </div>                          
                             <div class="form-group col-12">
                                 <label for="email" class="font-weight-bold">Email</label>
                                 <input type="text"  name="email" id="email" v-model="user.email" class="form-control">
@@ -46,6 +50,7 @@
          return {
            result: {},
            user:{
+                name: '',
                 email: '',
                 password: '',
                 password_confirmation: ''

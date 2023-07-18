@@ -21,15 +21,26 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </div>
+                            
                         </div>                        
                     </form>
+                </div>
+                <div class="card-footer">
+                    <button class="back-button btn btn-info" @click="goBack">Back</button>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<style>
+.back-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+</style>
 <script>
 export default {
     name: 'Create',
@@ -44,7 +55,6 @@ export default {
     },
     methods:{
         create(){
-
             const token = localStorage.getItem("token");
             axios.post('/api/Contacts',this.contact,{
                 headers: {
@@ -57,6 +67,9 @@ export default {
             }).catch(error=>{
                 console.log(error)
             })
+        },
+        goBack() {
+            this.$router.go(-1);
         }
     }
 }

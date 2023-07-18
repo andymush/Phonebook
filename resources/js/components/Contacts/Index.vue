@@ -52,6 +52,7 @@
             })
                 .then((response) => {
                 this.all_contacts = response.data.all_contacts;
+                
             })
                 .catch((error) => {
                 console.log(error);
@@ -88,7 +89,7 @@
                 }
             })
             
-        }
+        },
 
     },
     mounted() {

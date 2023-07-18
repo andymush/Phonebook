@@ -60,9 +60,14 @@ import { routerKey } from 'vue-router';
                 .then((response) => {         
                     console.log('successful login')
                     localStorage.setItem('token', response.data.token);    
+                    window.dispatchEvent(new CustomEvent('token-changed', {
+                    detail: {
+                        storage: localStorage.getItem('token')
+                    }
+                    }));
                     this.$router.push({name:'Index'})
-                    //this.$router.replace({name:'Index'})
-                    console.log('almost done')
+                    
+                    
                 })
                 .catch((error) => {
                     console.log(error)
