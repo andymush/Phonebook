@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 use Closure;
 
@@ -27,8 +29,21 @@ class CheckIfAdmin
      */
     private function checkIfUserIsAdmin($user)
     {
-        // return ($user->is_admin == 1);
-        return true;
+        
+        //return true;
+        
+            if ($user->email == 'admin@gmail.com')
+            {
+                return true;
+            }else{
+                //abort(403, 'Access Denied');
+                Auth::logout();
+                Session::flush();
+
+                return redirect('login')->with('error', 'Access Denied');
+            }
+                //return $next($request);
+        
     }
 
     /**
