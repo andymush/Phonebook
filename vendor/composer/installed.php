@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '211c3f684bdfe8a09f6a4627d01746de84295c84',
+        'reference' => '8468eb36bd0fe3fc45cbf44383b3fa636a850b0d',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -455,12 +455,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '211c3f684bdfe8a09f6a4627d01746de84295c84',
+            'reference' => '8468eb36bd0fe3fc45cbf44383b3fa636a850b0d',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -506,6 +506,15 @@
             'install_path' => __DIR__ . '/../laravel/tinker',
             'aliases' => array(),
             'reference' => 'dff39b661e827dae6e092412f976658df82dbac5',
+            'dev_requirement' => false,
+        ),
+        'laravel/ui' => array(
+            'pretty_version' => 'v4.2.2',
+            'version' => '4.2.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/ui',
+            'aliases' => array(),
+            'reference' => 'a58ec468db4a340b33f3426c778784717a2c144b',
             'dev_requirement' => false,
         ),
         'league/commonmark' => array(
