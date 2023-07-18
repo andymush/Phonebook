@@ -22,8 +22,8 @@
                         <tr v-for="contact in all_contacts">
                             <td>{{ contact.name }}</td>
                             <td>{{ contact.phone }}</td>
-                            <td>
-                                <button class="btn btn-success">Update</button>
+                            <td>                                
+                                <button class="btn btn-outline-success" @click="editContact(contact.id,contact.name)">View</button>
                                 &nbsp;
                                 <button class="btn btn-danger" @click="deleteContact(contact.id)">Delete</button>
                             </td>
@@ -34,7 +34,7 @@
         </div>
 </template>
 <script>
-            const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
     export default {
     data() {
@@ -73,6 +73,21 @@
                     this.getContacts();
                 });
             }
+        },
+        editContact(contactId, contactName){
+            //this.$router.push('/edit/' + contactId)
+            this.$router.push({
+                name:'edit',
+                params: {
+                    id:contactId,
+                    name: contactName
+                },
+                props:{
+                    id:contactId,
+                    name:contactName
+                }
+            })
+            
         }
 
     },
